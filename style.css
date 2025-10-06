@@ -375,6 +375,43 @@ body {
   }
 }
 
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--accent);
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--bg-2);
+    flex-direction: column;
+    width: 200px;
+    gap: 0;
+    display: none;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 0 0 12px 12px;
+  }
+
+  .menu-toggle:checked ~ nav .nav-links {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+
 .footer {
   text-align: center;
   padding: 2.25rem 1.25rem;
