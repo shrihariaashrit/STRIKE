@@ -188,6 +188,81 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
+
+.teacher-image {
+  width: 100%;
+  height: 240px; /* Or try 200px */
+  object-fit: cover;
+  object-position: top center; /* Ensures top of image is shown */
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.teacher-description {
+  color: var(--muted);
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.card-glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  backdrop-filter: blur(6px);
+}
+
+.card:hover .teacher-image {
+  transform: scale(1.05);
+}
+
+.teacher-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cards {
+  font-style: italic;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.teacher-card {
+
+  animation: fadeIn 1.2s ease-in-out both;
+}
+
+.teacher-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.teacher-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.teacher-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.teacher-card:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
 .section-title {
   font-size: clamp(1.5rem, 4.5vw, 2.4rem);
   margin-bottom: 1.75rem;
